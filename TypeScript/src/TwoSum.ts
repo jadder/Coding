@@ -15,10 +15,10 @@ function TwoSum(numbers: number[], target: number): number[] {
     let result : number[] = [];                     //following good practice of just have one return or at least few of them.
 
     for(let i=0; i<numbers.length; i++){            //Iterate through the list with both index and value
-        let component = target - numbers[i]!;       //Calculate the number needed to reach the target
+        let complement = target - numbers[i]!;       //Calculate the number needed to reach the target
         
-        if(component in seen){                      // If the needed number was already seen, return both indices
-            result = [seen[component]!, i];
+        if(complement in seen){                      // If the needed number was already seen, return both indices
+            result = [seen[complement]!, i];
             break;
         }
         seen[numbers[i]!] = i;                      //Otherwise, store the current number and its index

@@ -1,3 +1,16 @@
+# Folders
 node_modules/
+
+# Files
+*.exe
+*.out
+*.obj
+*.o
 *.json
 
+# Archivos temporales de VS Code
+.vscode/
+
+# Otros
+*.log
+coding.code-workspace

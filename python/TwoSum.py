@@ -17,11 +17,11 @@ def TwoSum(nums, target):
     # Iterate through the list with both index and value
     for i, num in enumerate(nums):
         # Calculate the number needed to reach the target
-        component = target - num
+        complement = target - num
 
         # If the needed number was already seen, return both indices
-        if component in seen:
-            return [seen[component], i]
+        if complement in seen:
+            return [seen[complement], i]
 
         # Otherwise, store the current number and its index
         seen[num] = i
