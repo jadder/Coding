@@ -15,3 +15,7 @@ node_modules/
 *.log
 coding.code-workspace
 java/Main.java
+python/main.py
+python/test.py
+python/__pycache__/node.cpython-313.pyc
+python/__pycache__/AddTwoNumbers.cpython-313.pyc
