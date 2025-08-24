@@ -13,11 +13,9 @@ node_modules/
 
 # Otros
 *.log
+*.pyc
 coding.code-workspace
 java/Main.java
 python/main.py
 python/test.py
-python/__pycache__/node.cpython-313.pyc
-python/__pycache__/AddTwoNumbers.cpython-313.pyc
 python/benchmark.py
-python/__pycache__/LongestSubstring.cpython-313.pyc
