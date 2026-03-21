@@ -1,3 +1,6 @@
+# javascript files
+*.js
+
 # Folders
 node_modules/
 
