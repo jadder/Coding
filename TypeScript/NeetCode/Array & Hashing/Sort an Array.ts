@@ -9,7 +9,7 @@ function sortArray(nums: number[]): number[] {
     let temp: number = 0;
 
     // Keep looping until no swaps happen
-    while (repetir) {
+    do {
         // Assume no swaps will be needed this pass
         repetir = false;
 
@@ -17,15 +17,14 @@ function sortArray(nums: number[]): number[] {
         for (let i = 0; i < tamanio + 1; i++) {
             // If the current number is bigger than the next, swap them
             if (nums[i] > nums[i + 1]) {
-                temp = nums[i];
-                nums[i] = nums[i + 1];
-                nums[i + 1] = temp;
+                [nums[i], nums[i+1]] = [nums[i+1], nums[i]];
 
                 // If we swapped, we need another pass
                 repetir = true;
             }
         }
-    }
+        tamanio--;
+    }while (repetir);
 
     // Return the sorted array
     return nums;
