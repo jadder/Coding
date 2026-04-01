@@ -1,3 +1,5 @@
+*.js
+
 # Folders
 node_modules/
 
@@ -31,3 +33,5 @@ python/benchmark.py
 /python/pyproject.toml
 /python/uv.lock
 /python/README.md
+
+TypeScript/NeetCode/Array & Hashing/test.ts
