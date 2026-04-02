@@ -1,3 +1,5 @@
+{  
+
 /* https://neetcode.io/problems/anagram-groups/question
 Group Anagrams
 */
@@ -39,7 +41,8 @@ function groupAnagrams(words: string[]): string[][] {
 
 
 // test it
-const words = ["act", "pots", "tops", "cat", "stop", "hat"];
-const result = groupAnagrams(words);
-console.log(result);
+const words2 = ["act", "pots", "tops", "cat", "stop", "hat"];
+const result2 = groupAnagrams(words2);
+console.log(result2);
 // output: [ [ 'act', 'cat' ], [ 'pots', 'tops', 'stop' ], [ 'hat' ] ]
+}
