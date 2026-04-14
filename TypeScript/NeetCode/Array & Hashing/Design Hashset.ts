@@ -1,7 +1,7 @@
 // I’m implementing a simple HashSet using an array.
 // This is NOT optimal, but it's a straightforward approach for understanding the behavior.
 
-class MyHashSet {
+class MyHashMap {
 
     // Store unique values
     private values: number[];
@@ -12,7 +12,7 @@ class MyHashSet {
     }
 
     // Add a value if it doesn't already exist
-    add(value: number): void { 
+    put(value: number): void { 
         // includes() is O(n)
         if (!this.values.includes(value)) {
             // push is O(1)
@@ -45,7 +45,7 @@ class MyHashSet {
 // ----------------------
 
 // Create instance
-let hashSet: MyHashSet = new MyHashSet();
+let hashSet: MyHashMap = new MyHashMap();
 
 // Operations to simulate
 let operations: string[] = [
@@ -74,7 +74,7 @@ for (let i = 0; i < operations.length; i++) {
             break;
 
         case "add":
-            hashSet.add(value);
+            hashSet.put(value);
             output.push(null);
             break;
 
@@ -91,3 +91,6 @@ for (let i = 0; i < operations.length; i++) {
 
 console.log(output);
 // Expected: [null, null, null, true, false, null, true, null, false]
+
+
+export {}; // Esto le dice a TS: "Este archivo es un módulo independiente"
