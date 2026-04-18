@@ -45,12 +45,38 @@ class Solution {
 }
 
 
-// test
-let input: string = "lcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupucul"; // true
-let sol: Solution = new Solution();
+// ---------------- TESTS ----------------
 
-if (sol.validPalindrome(input)) {
-    console.log("✅ Passed");
-} else {
-    console.log("❌ Failed")
+const tests: { input: string; expected: boolean }[] = [
+    { input: "abccdba", expected: true },
+    { input: "deeee", expected: true },
+    { input: "racecar", expected: true },
+    { input: "abc", expected: false },
+    { input: "abca", expected: true },
+    { input: "abbca", expected: true },
+    { input: "a", expected: true },
+    { input: "aa", expected: true },
+    { input: "baa", expected: true },
+    { input: "abcba", expected: true },
+    { input: "abecbea", expected: false },
+];
+
+const sol = new Solution();
+
+let allPassed = true;
+
+for (const { input, expected } of tests) {
+    const result = sol.validPalindrome(input);
+
+    if (result !== expected) {
+        console.log("❌ FAILED");
+        console.log("Input   :", input);
+        console.log("Expected:", expected);
+        console.log("Got     :", result);
+        allPassed = false;
+    }
+}
+
+if (allPassed) {
+    console.log("✅ PASSED");
 }
