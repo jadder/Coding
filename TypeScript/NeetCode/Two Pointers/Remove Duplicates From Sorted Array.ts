@@ -5,31 +5,19 @@
          * @return {number}
          */
         removeDuplicates(nums: number[]): number {
-            if (nums.length <= 1) return nums.length;
-            if (nums.length === 2) return (nums[0] === nums[1]) ? 1 : 2;
-            let k: number = nums.length;
+            let tam: number = nums.length;
 
-            for (let i = 0, j = 0, f = 0; i < nums.length;) {
+            if (tam <= 1) return tam;
+            if (tam === 2) return (nums[0] === nums[1]) ? 1 : 2;
 
-                if (i === j) j++;
-
-
-                while (nums[i] === nums[j] && j < nums.length) {
-                    j++;
-                    k--;
+            let k: number = 1;
+            for (let i = 1; i < nums.length; i++) {
+                if (nums[i] !== nums[i - 1]) {
+                    nums[k] = nums[i];
+                    k++;
                 }
-                i++;
-                f = i + 1;
-
-                while (j < nums.length) {
-                    nums[i] = nums[j];
-                    i++;
-                    j++;
-                }
-
-                i = f;
-                j = f
             }
+
 
             return k;
         }
