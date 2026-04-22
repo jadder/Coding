@@ -27,7 +27,11 @@
         const solution = new Solution();
 
         const tests = [
-
+            {
+                input: [1, 2, 3, 4],
+                expectedK: 4,
+                expectedNums: [1, 2, 3, 4]
+            },
             {
                 input: [0, 0, 1, 1, 1, 2, 2, 3, 3, 4],
                 expectedK: 5,
@@ -53,11 +57,7 @@
                 expectedK: 1,
                 expectedNums: [1]
             },
-            {
-                input: [1, 2, 3, 4],
-                expectedK: 4,
-                expectedNums: [1, 2, 3, 4]
-            },
+
             {
                 input: [-3, -3, -2, -1, -1, 0, 0, 1],
                 expectedK: 5,
