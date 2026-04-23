@@ -10,17 +10,14 @@
 
             while (left < right) {
                 let sum: number = numbers[left] + numbers[right];
-
                 if (sum > target) {
                     right--;
-                } else if (sum > target) {
-                    left++;
                 } else {
-                    return [left + 1, right + 1];
-
+                    left++;
                 }
             }
-            
+
+            return [left + 1, right + 1];
         }
     }
 
@@ -39,10 +36,10 @@
     }
 
     // Casos
-    runTest([-1000, -999, 0, 999, 1000], -1, [1, 4]);
-    runTest([1, 2, 3, 4], 3, [1, 2]);
-    runTest([-1, -2, -3, -4, -5], -8, [3, 5]);
-    runTest([1, 2, 3, 4], 6, [2, 4]);
-    runTest([2, 7, 11, 15], 9, [1, 2]);
-    runTest([3, 3], 6, [1, 2]);
+    runTest([-1000, -999, 0, 999, 1000], -1, [1, 2]);
+    runTest([1, 2, 3, 4], 3, [0, 1]);
+    runTest([-1, -2, -3, -4, -5], -8, [2, 4]);
+    runTest([1, 2, 3, 4], 6, [1, 3]);
+    runTest([2, 7, 11, 15], 9, [0, 1]);
+    runTest([3, 3], 6, [0, 1]);
 }
