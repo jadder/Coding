@@ -7,11 +7,19 @@
          * @return {number}
          */
         maxArea(heights: number[]): number {
-           
+
             let answer: number = -1;
 
+            let left_max_height: number = 0;
+
             for (let left = 0; left < heights.length - 1; left++) {
-                for (let right = heights.length-1; right > left; right--) {
+                if (left_max_height < heights[left]) {
+                    left_max_height = heights[left];
+                }
+                if (left > 0 && heights[left] < left_max_height) {
+                    continue;
+                }
+                for (let right = heights.length - 1; right > left; right--) {
                     let temp: number = calc(heights[left], left, heights[right], right);
                     if (answer < temp) {
                         answer = temp;
