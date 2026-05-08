@@ -17,11 +17,12 @@ class Solution
 {
 private:
     // this works like a stack where we keep the "alive" asteroids
-    vector<int> stackResult;
+
 
 public:
     vector<int> asteroidCollision(vector<int>& asteroids)
     {
+        vector<int> stackResult;
         for (const int& asteroid : asteroids)
         {
             // first, we just push the asteroid
@@ -116,7 +117,7 @@ void runTest(int testNum, Solution& sol, vector<int> input, vector<int> expected
 int main()
 {
     Solution sol;
-    runTest(0, sol, {-2,-1,1,2}, {-2,-1,1,2});
+    // runTest(0, sol, {-2, -1, 1, 2}, {-2, -1, 1, 2});
     // runTest(1, sol, {2, 4, -4, -1}, {2});
     // runTest(2, sol, {1, 2, 3, 4}, {1, 2, 3, 4});
     // runTest(3, sol, {-1, -2, -3}, {-1, -2, -3});
@@ -131,7 +132,7 @@ int main()
     // runTest(12, sol, {-2, -1, 1, 2}, {-2, -1, 1, 2});
     // runTest(13, sol, {1, 2, 3, -3, -2, -1}, {});
     // runTest(14, sol, {1, 2, -1, -2}, {});
-    // runTest(15, sol, {10, 1, 2, 3, -10}, {});
+    runTest(15, sol, {10, 1, 2, 3, -10}, {});
 
     return 0;
 }
