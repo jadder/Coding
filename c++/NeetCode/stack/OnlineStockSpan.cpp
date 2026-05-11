@@ -16,26 +16,30 @@ public:
 
     int next(int price)
     {
-        pair<int, int> par = {price, ++indice};
+        indice++;
 
-        if (!myStack.empty())
+        // eliminar todos los menores o iguales
+        while (!myStack.empty() && myStack.top().first <= price)
         {
-            if (myStack.top().first < price)
-            {
-                int temp = 0;
-                while (!myStack.empty() && myStack.top().first < price)
-                {
-                    temp = myStack.top().second;
-                    myStack.pop();
-                }
-                
-                myStack.push(par);
-                return indice - temp;
-            }
+            myStack.pop();
         }
 
-        myStack.push(par);
-        return 1;
+        int span;
+
+        // si no hay mayor a la izquierda
+        if (myStack.empty())
+        {
+            span = indice + 1;
+        }
+        else
+        {
+            span = indice - myStack.top().second;
+        }
+
+        // guardar precio actual e índice
+        myStack.push({price, indice});
+
+        return span;
     }
 };
 
@@ -43,11 +47,11 @@ public:
 int main()
 {
     //vector<int> input = {100, 80, 60, 70, 60, 75, 85};
-    vector<int> input = {100, 101, 102, 103};
+    vector<int> input = {100, 101, 99, 102, 103};
 
     // RESULTADOS ESPERADOS
     vector<int> expected = {1, 1, 1, 2, 1, 4, 6};
-    expected = {1, 2, 3, 4};
+    expected = {1, 2, 1, 3, 4};
 
     StockSpanner sol;
 
