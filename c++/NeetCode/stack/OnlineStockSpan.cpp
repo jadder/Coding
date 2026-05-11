@@ -16,24 +16,26 @@ public:
 
     int next(int price)
     {
-        indice++;
+            indice++;
 
         // eliminar todos los menores o iguales
         while (!myStack.empty() && myStack.top().first <= price)
         {
-            myStack.pop();
-        }
+            myStack.pop(); 
+        } 
 
         int span;
 
         // si no hay mayor a la izquierda
         if (myStack.empty())
         {
-            span = indice + 1;
+            span = indice + 1;      // la logica es que si habia un numero mayor que los llevo a todos 
+                                    // por ende estaria solo y es su indice mas 1 que es el mismo
         }
         else
         {
-            span = indice - myStack.top().second;
+            span = indice - myStack.top().second;   // super entiendo (diferencia de indices da el span)
+                                                    // como no se lo pudo llevar a todos (entonces la diferncia de indices)
         }
 
         // guardar precio actual e índice
@@ -46,12 +48,12 @@ public:
 #include <vector>
 int main()
 {
-    //vector<int> input = {100, 80, 60, 70, 60, 75, 85};
-    vector<int> input = {100, 101, 99, 102, 103};
+    vector<int> input = {100, 80, 60, 70, 60, 75, 85};
+    //vector<int> input = {100, 101, 99, 102, 103};
 
     // RESULTADOS ESPERADOS
     vector<int> expected = {1, 1, 1, 2, 1, 4, 6};
-    expected = {1, 2, 1, 3, 4};
+    //expected = {1, 2, 1, 3, 4};
 
     StockSpanner sol;
 
