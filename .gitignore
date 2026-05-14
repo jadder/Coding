@@ -13,6 +13,15 @@ node_modules/
 # Archivos temporales de VS Code
 .vscode/
 
+# Ejecutables
+a.out
+*.exe
+*.out
+
+# Archivos objeto (compilación)
+*.o
+*.obj
+
 # Otros
 *.log
 *.pyc
@@ -45,3 +54,5 @@ c++/.idea/workspace.xml
 c++/NeetCode/stack/CarFleet_miSolucion.cpp
 c++/NeetCode/stack/CarFleet
 c++/NeetCode/stack/OnlineStockSpan
+c++/NeetCode/stack/test.cpp
+

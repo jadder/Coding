@@ -1,3 +1,4 @@
+#include <iostream>
 #include <algorithm>
 #include <vector>
 
@@ -44,13 +45,13 @@ int main()
     int target = 10;
     int expected = 3;
 
-    pos = {1, 4};
-    spe = {3, 2};
-    expected = 1;
+    // pos = {1, 4};
+    // spe = {3, 2};
+    // expected = 1;
 
-    pos = {8, 3, 7, 4, 6, 5};
-    spe = {4, 4, 4, 4, 4, 4};
-    expected = 6;
+    // pos = {8, 3, 7, 4, 6, 5};
+    // spe = {4, 4, 4, 4, 4, 4};
+    // expected = 6;
 
     Solution sol;
     int result = sol.carFleet(target, pos, spe);
